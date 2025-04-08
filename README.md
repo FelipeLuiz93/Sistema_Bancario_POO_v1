@@ -1,30 +1,22 @@
 # Sistema_Bancario_POO_v1
 Esse código representa um modelo orientado a objetos para um sistema bancário simples. Ele permite a realização de transações básicas como depósitos, saques e consulta de extrato, além de incluir funcionalidades de registro de transações, cadastro de usuários e contas.
-O sistema possui um menu interativo com as seguintes opções:
 
-Criar Usuário:
-Permite cadastrar um novo usuário informando nome, CPF, data de nascimento e endereço.
+## 📚 Funcionalidades
 
-Criar Conta Corrente:
-Associa uma nova conta a um usuário já existente (identificado pelo CPF). Cada conta tem número, agência e CPF do titular.
+- Cadastro de clientes (Pessoa Física)
+- Criação de contas correntes
+- Realização de saques e depósitos
+- Controle de limite de saques e valores
+- Histórico de transações com data e hora
+- Registro automático de todas as transações
 
-Depositar:
-Adiciona um valor positivo ao saldo da conta. Valor deve ser maior que zero.
+## 🧱 Estrutura de Classes
 
-Sacar:
-Permite saques respeitando as seguintes regras:
-
-Limite de R$500 por operação;
-
-Limite de 3 saques diários;
-
-Deve haver saldo suficiente na conta.
-
-Extrato:
-Exibe o saldo atual e o histórico completo de transações (depósitos e saques).
-
-Listar Contas:
-Mostra todas as contas cadastradas, com seus respectivos titulares.
-
-Sair:
-Encerra o programa.
+- `Cliente`: Classe base para clientes, com endereço e contas.
+- `PessoaFisica`: Herda de `Cliente`, representa clientes PF com nome, CPF e data de nascimento.
+- `Conta`: Representa uma conta genérica com saldo, número, agência e histórico.
+- `ContaCorrente`: Herda de `Conta`, adiciona limite de saque e quantidade máxima de saques.
+- `Historico`: Registra todas as transações realizadas.
+- `Transacao`: Classe abstrata para operações financeiras.
+  - `Saque`: Implementa operação de saque.
+  - `Deposito`: Implementa operação de depósito.
